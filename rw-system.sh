@@ -315,6 +315,11 @@ fi
         
 if getprop ro.vendor.product.device | grep -q -e nora -e rhannah; then
     setprop debug.sf.latch_unsignaled 1
+    persist.device_config.runtime_native.usap_pool_enabled=true
+    debug.sf.enable_hwc_vds=1
+    debug.sf.hw=1
+    debug.egl.hw=1
+    ro.config.max_starting_bg=8
 fi
 
 if getprop ro.vendor.build.fingerprint | grep -iq -e xiaomi/daisy; then
